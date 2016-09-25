@@ -7,3 +7,8 @@ Demo files for scaling ioSocket behind and nginx reverse proxy using Redis and t
 * Install Docker - https://docs.docker.com/engine/getstarted/step_one/
 * Run the Build.sh to build correct images
 * Run docker-compose up
+
+
+**What's happening?**
+ * When you connect to machine on port 8080 using different IP addresses you will see those connection routed to one of the three NodeJs systems.
+ * At this point you should be able to send chat messages to all of the connected client regardless of which NodJes instance they are connected to.
