@@ -5,5 +5,5 @@ Demo files for scaling ioSocket behind and nginx reverse proxy using Redis and t
 
 **How to run**
 * Install Docker - https://docs.docker.com/engine/getstarted/step_one/
-* Run the Buil.sh to build correct images
+* Run the Build.sh to build correct images
 * Run docker-compose up
