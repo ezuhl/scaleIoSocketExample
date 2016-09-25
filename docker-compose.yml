@@ -1,0 +1,37 @@
+redis:
+    image: redisserver
+    ports:
+        - "6379"
+node1:
+    image: nodeserver
+    entrypoint: ["/usr/bin/nodejs"]
+    command: index.js
+    links:
+        - redis
+    ports:
+        - "8080"
+        - "8082:8080"
+node2:
+    image: nodeserver
+    entrypoint: ["/usr/bin/nodejs"]
+    command: index.js
+    links:
+        - redis
+    ports:
+        - "8080"
+node3:
+    image: nodeserver
+    entrypoint: ["/usr/bin/nodejs"]
+    command: index.js
+    links:
+        - redis
+    ports:
+        - "8080"
+nginx:
+    image: nginxserver
+    links:
+        - node1
+        - node2
+        - node3
+    ports:
+        - "8080:8081"
